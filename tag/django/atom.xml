@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://iyhi.github.io</id>
+    <title>YH • Posts by &#34;django&#34; tag</title>
+    <link href="https://iyhi.github.io" />
+    <updated>2021-11-15T03:27:52.000Z</updated>
+    <category term="算法" />
+    <category term="Java" />
+    <category term="Spring" />
+    <category term="杂说" />
+    <category term="故事" />
+    <category term="python" />
+    <category term="Django" />
+    <entry>
+        <id>https://iyhi.github.io/2021/11/15/python/Django/Django%E7%AC%94%E8%AE%B0/</id>
+        <title>Django笔记</title>
+        <link rel="alternate" href="https://iyhi.github.io/2021/11/15/python/Django/Django%E7%AC%94%E8%AE%B0/"/>
+        <content type="html">&lt;h2 id=&#34;初始化后&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初始化后&#34;&gt;#&lt;/a&gt; 初始化后&lt;/h2&gt;
+&lt;p&gt;使用 idea 生成的目录结构&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/IhqCWD.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Django 是项目的名称&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2luaXQucHk=&#34;&gt;init.py&lt;/span&gt;：一个空文件，告诉 python 该目录是一个 python 包&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2FzZ2kucHk=&#34;&gt;asgi.py&lt;/span&gt;：一个 ASGI 兼容的 Web 服务器的入口，以便运行项目&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NldHRpbmcucHk=&#34;&gt;setting.py&lt;/span&gt;: 该 Django 项目的设置 / 配置&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3VybHMucHk=&#34;&gt;urls.py&lt;/span&gt;: 项目的主路由配置 ——HTTP 请求进入 Django 的时候，优先此文件&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3dzZ2kucHk=&#34;&gt;wsgi.py&lt;/span&gt;: 一个 WSGI 兼容的 Web 服务器的入口，以便运行项目（WEB 服务网关的配置项目）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;settingpy&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#settingpy&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL1NldHRpbmcucHk=&#34;&gt;Setting.py&lt;/span&gt; 相关配置&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;SECRET_KEY&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;​		引用一段 Flask Web Development 中的内容:&lt;/p&gt;
+&lt;p&gt;​	 	SECRET_KEY 配置变量是通用密钥，可在 Flask 和多个第三方扩展中使用。如其名所示，加密的强度取决于变量值的机密度。不同的程序要使用不同的密钥，而且要保证其他人不知道你所用的字符串.&lt;/p&gt;
+&lt;p&gt;SECRET_KEY 的作用主要是提供一个值做各种 HASH, 我没有实际研究过源码，不同框架和第三方库的功能也不尽相同，我不能给出准确的答案，但是主要的作用应该是在其加密过程中作为算法的一个参数 (salt 或其他). 所以这个值的复杂度也就影响到了数据传输和存储时的复杂度.&lt;/p&gt;
+&lt;p&gt;另外，考虑到安全性，这个密钥是不建议存储在你的程序中的。最好的方法是存储在你的系统环境变量中，通过 os.getenv (key, default=None) 获得.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;SECTET_KEY&lt;/code&gt;  在  &lt;code&gt;Djanog&lt;/code&gt;  中使用非常广泛，基本上涉及到安全，加密等的地方都用到了&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;DEBUG&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;​	这是程序启动的一种模式，如果你&lt;strong&gt;开启&lt;/strong&gt;此模式（DEBUG=True），那么在我们启动程序后再修改代码并保存后就不需要重新启动，Django 会自动为我们重启项目，代码中出现 bug 那么在我们访问地址的时候，浏览器和控制台会打印错误信息。&lt;/p&gt;
+&lt;p&gt;​	在&lt;strong&gt;生产环境&lt;/strong&gt;中是禁用 DEBUG 模式的，不然会有很大的安全隐患，需要设置 ALLOWED_HOSTS。ALLOWED_HOSTS：这个变量是用来设置以后别人只能通过这个变量中的 ip 地址或者域名来进行访问。&lt;/p&gt;
+&lt;p&gt;eg：&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ALLOWED_HOSTS &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;#一般放的是 host 的头部&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这样 Django 是默认（localhost: 端口号）和（127.0.0.1: 端口号）允许这两个访问&lt;/p&gt;
+&lt;p&gt;一般在 [] 这里面会写入我们的二级域名&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;INSTALLED_APPS&lt;/p&gt;
+&lt;p&gt;作为查找模型，管理命令，测试和其他实用程序的所有位置的列表。&lt;/p&gt;
+&lt;p&gt;当你在项目里新建立了一个 app 的时候要到这个地方注册&lt;/p&gt;
+&lt;p&gt;eg: 在控制台输出 python &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21hbmFnZS5weQ==&#34;&gt;manage.py&lt;/span&gt; startapp appname (注意要在和 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21hbmFnZS5weQ==&#34;&gt;manage.py&lt;/span&gt; 同一级目录下)&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/IhbLQJ.png&#34; alt=&#34;startapp text1.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后去项目的 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NldHRpbmcucHk=&#34;&gt;setting.py&lt;/span&gt; 里面&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/IhbOy9.png&#34; alt=&#34;setting add app test1.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这样 Django 才能找到你的 app&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MIDDLEWARE&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;中间件是介于 request 和 response 处理之间的一道处理过程，用于全局范围改变 Django 的输入和输出，简单的来说中间件是帮助我们在视图函数指向之前和执行之后都可以做一些额外的操作。&lt;/li&gt;
+&lt;li&gt;Django 项目中默认启用了 csrf 保护，每次请求通过 csrf 中间件检查请求是否是有正确的 token 值；当用户发送请求时，通过自定义的认证中间件，判断用户是否已经登录，未登录就去登录；当用户的请求过阿里阿是，判断用户是否在白名单或者黑名单内。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;ROOT_URLCONF&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;路由配置路径从什么地方开始找&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;TEMPLATES&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;参数说明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;BACKEND：指定模板引擎&lt;/li&gt;
+&lt;li&gt;DIRS：模板搜索目录&lt;/li&gt;
+&lt;li&gt;APP_DIRS：是否要在应用中的 templates 文件夹中搜索模板文件&lt;/li&gt;
+&lt;li&gt;OPTIONS：有关模板选项&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;DATABASES&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;连接数据库相关配置&lt;/p&gt;
+&lt;p&gt;详细请看官方文档：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kb2NzLmRqYW5nb3Byb2plY3QuY29tL2VuLzMuMi9yZWYvc2V0dGluZ3MvI2RhdGFiYXNlcw==&#34;&gt;https://docs.djangoproject.com/en/3.2/ref/settings/#databases&lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;LANGUAGE_CODE：语言设置&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TIME_ZONE: 时区设置&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;视图和 URL 的设置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在 Django 目录下创建一个 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3ZpZXdzLnB5&#34;&gt;views.py&lt;/span&gt; 文件&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/IhqpFK.png&#34; alt=&#34;views.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;将 URL 与视图函数绑定&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/Ihbxdx.png&#34; alt=&#34;urls_1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;Path（）函数可以接收 &lt;strong&gt;4&lt;/strong&gt; 个参数，分别是两个必选参数：&lt;strong&gt;route、view&lt;/strong&gt; 和两个可选参数：kwargs、name&lt;/p&gt;
+&lt;p&gt;语法格式：&lt;strong&gt;path(route,view,kwargs,name)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Route: 字符串，表示 URL 的规则，与之匹配的 URL 会执行对应的第二个参数 view&lt;/li&gt;
+&lt;li&gt;View：用来执行与正则表达式匹配的 URL 请求&lt;/li&gt;
+&lt;li&gt;Kwargs：试图使用的字典类型的参数&lt;/li&gt;
+&lt;li&gt;Name：用来反向获取 URL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;上面的输出 Hello World 是使用 HttpResponse () 来输出的，这种方式将数据和视图混在一起，不符合 Django 的 MVC 思想&lt;/p&gt;
+&lt;p&gt;使用模板来输出 Hello World&lt;/p&gt;
+&lt;p&gt;在 Django 目录下新建一个 templates 文件夹来存放 html 文件&lt;/p&gt;
+&lt;p&gt;新建一个 html 文件命名为：runoob.html，内容如下：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/Ihbbz4.png&#34; alt=&#34;runoob_1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后要向 django 说明模板文件的路径，修改 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NldHRpbmcucHk=&#34;&gt;setting.py&lt;/span&gt;，修改 TEMPLATES 中的 DIRS 为 [os.path.join (BASE_DIR,’templates’)]，如下：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/IhbXLR.png&#34; alt=&#34;setting_1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后去修改  &lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3ZpZXdzLnB5&#34;&gt;views.py&lt;/span&gt;&lt;/strong&gt; ，增加一个新的对象，用于向模板提交数据&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/Ihq9JO.png&#34; alt=&#34;views_runoob_1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/Ihbzo6.png&#34; alt=&#34;urls_2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这样就完成了使用模板来输出数据，从而实现数据和视图的分离&lt;/p&gt;
+&lt;h2 id=&#34;模板标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模板标签&#34;&gt;#&lt;/a&gt; 模板标签&lt;/h2&gt;
+&lt;h3 id=&#34;变量模板语法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量模板语法&#34;&gt;#&lt;/a&gt; 变量（模板语法）&lt;/h3&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 花括号之间不用空格 --&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;view:&amp;#123;&#39;HTML变量名&#39;:&#39;views变量名&#39;&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;HTML:&amp;#123; &amp;#123;变量名&amp;#125; &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;例子：&lt;br&gt;
+Django/views.py&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;runoob&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;request&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;	view_anme&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;努力学习天天向上!&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; render&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;request&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;runoob.html&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;name&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;view_anme&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;templates 中的 runoob.html&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 花括号之间不用空格 --&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&amp;#123; &amp;#123; name &amp;#125; &amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;然后再去访问 localhost:8000/runoob&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/IhbTiT.png&#34; alt=&#34;8000_1.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#列表&#34;&gt;#&lt;/a&gt; 列表&lt;/h3&gt;
+&lt;p&gt;在 templates 中的 runoob.html 中，可以使用 &lt;strong&gt;.&lt;/strong&gt; 来索引下标取出对应的元素。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Django/views.py&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;eg_list&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;request&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    view_list &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;first&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;second&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;third&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; render&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;request&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;eg_list.html&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;view_list&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;view_list&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;templates 中的 eg_list.html&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 花括号之间不用空格 --&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&amp;#123; &amp;#123; view_list &amp;#125; &amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&amp;#123; &amp;#123; view_list.0 &amp;#125; &amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;加了新的访问连接需要配置 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3VybHMucHk=&#34;&gt;urls.py&lt;/span&gt; 文件&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;urlpatterns &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    path&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;hello/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; views&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;hello&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    path&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;runoob/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; views&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;runoob&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    path&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;eg_list&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;views&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;eg_list&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;#这个是新增的&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;然后访问 localhost:8000/eg_list&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/IhbHWF.png&#34; alt=&#34;IhbIoV.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;字典&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字典&#34;&gt;#&lt;/a&gt; 字典&lt;/h3&gt;
+&lt;p&gt;在 templates 中字典和列表一样可以是用索引来取出对应的值&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Django/views.py&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;eg_dictionary&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;request&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    view_dictionary &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;name&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;ZhangSan&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;sex&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;man&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; render&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;request&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;eg_dictionary.html&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;view_dictionary&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;templates 中的 eg_dictionary.html&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;&amp;lt;!-- 花括号之间不用空格 --&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&amp;#123; &amp;#123; view_dictionary &amp;#125; &amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;   &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&amp;#123; &amp;#123; view_dictionary.name &amp;#125; &amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;    &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&amp;#123; &amp;#123; view_dictionary.sex &amp;#125; &amp;#125;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;Django/urls.py&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;urlpatterns &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    path&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;hello/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; views&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;hello&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    path&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;runoob/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; views&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;runoob&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    path&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;eg_list/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; views&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;eg_list&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    path&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;eg_dictionary/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; views&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;eg_dictionary&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#这个是新增的&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;然后访问 localhost:8000/eg_dictionary&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img13.360buyimg.com/ddimg/jfs/t1/202329/27/15323/33204/619237cdE326f1f10/793bea4f4693b9cf.png&#34; alt=&#34;eg_dictionary.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;过滤器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#过滤器&#34;&gt;#&lt;/a&gt; 过滤器&lt;/h3&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; 变量名 &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; 过滤器：可选参数 &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;模板过滤器可以在变量被显示前修改它，过滤器使用管道字符，如下所示:&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; name&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;lower &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;变量被过滤器 lower 处理后，文档大写转换文本为小写。&lt;/p&gt;
+&lt;p&gt;过滤管道可以被&lt;strong&gt;套接&lt;/strong&gt; ，既是说，一个过滤器管道的输出又可以作为下一个管道的输入：&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; my_list&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;first&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;upper &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;safe&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#safe&#34;&gt;#&lt;/a&gt; safe&lt;/h3&gt;
+&lt;p&gt;将字符串标记为安全，不需要转义。&lt;/p&gt;
+&lt;p&gt;要保证 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3ZpZXdzLnB5&#34;&gt;views.py&lt;/span&gt; 传过来的数据绝对安全，才能用 safe。&lt;/p&gt;
+&lt;p&gt;一般情况下 Django 会将我们传入的数据直接转义成字符格式。&lt;/p&gt;
+&lt;p&gt;和后端 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3ZpZXdzLnB5&#34;&gt;views.py&lt;/span&gt; 的 mark_safe 效果相同。&lt;/p&gt;
+&lt;p&gt;Django 会自动对 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3ZpZXdzLnB5&#34;&gt;views.py&lt;/span&gt; 传到 HTML 文件中的标签语法进行转义，令其语义失效。加 safe 过滤器是告诉 Django 该数据是安全的，不必对其进行转义，可以让该数据语义生效。&lt;/p&gt;
+&lt;h3 id=&#34;ifelse-标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ifelse-标签&#34;&gt;#&lt;/a&gt; if/else 标签&lt;/h3&gt;
+&lt;p&gt;基本语法格式如下：（{和 % 之间不需要空格）&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % if condition % &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;     ... display&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % endif % &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;或者：&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % if condition1 %&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   ... display 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % elif condition2 %&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   ... display 2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % else %&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   ... display 3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % endif %&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;根据条件判断是否输出。if/else 支持嵌套。&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;标签接受 and ， or 或者 not 关键字来对多个变量做判断 ，或者对变量取反（ not )。&lt;/p&gt;
+&lt;h3 id=&#34;for-标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#for-标签&#34;&gt;#&lt;/a&gt; for 标签&lt;/h3&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % for %&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;允许我们在一个序列上迭代。&lt;/p&gt;
+&lt;p&gt;与 Python 的 for 语句的情形类似，循环语法是 for X in Y ，Y 是要迭代的序列而 X 是在每一个特定的循环中使用的变量名称。&lt;/p&gt;
+&lt;p&gt;每一次循环中，模板系统会渲染在&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % for % &amp;#125;和&amp;#123; % endfor % &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;之间的所有内容。&lt;/p&gt;
+&lt;h3 id=&#34;注释标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注释标签&#34;&gt;#&lt;/a&gt; 注释标签&lt;/h3&gt;
+&lt;p&gt;Django 注释使用 。&lt;/p&gt;
+&lt;p&gt;python&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; # 这是一个注释 #&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;include-标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#include-标签&#34;&gt;#&lt;/a&gt; include 标签&lt;/h3&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % include %&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;标签允许在模板中包含其它的模板的内容。&lt;/p&gt;
+&lt;p&gt;下面这个例子都包含了 nav.html 模板：&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % include &#34;nav.html&#34; %&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;csrf_token&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#csrf_token&#34;&gt;#&lt;/a&gt; csrf_token&lt;/h3&gt;
+&lt;p&gt;csrf_token 用于 form 表单中，作用是跨站请求伪造保护。&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;如果不用&amp;#123; % csrf_token %&amp;#125;标签，在用 form 表单时，要再次跳转页面会报403权限错误。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;用了｛ % csrf_token %｝标签，在 form 表单提交数据时，才会成功。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;解析：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​		首先，向服务器发送请求，获取登录页面，此时中间件 csrf 会自动生成一个隐藏 input 标签，该标签里的 value 属性的值是一个随机的字符串，用户获取到登录页面的同时也获取到了这个隐藏的 input 标签。&lt;br&gt;
+​		然后，等用户需要用到 form 表单提交数据的时候，会携带这个 input 标签一起提交给中间件 csrf，原因是 form 表单提交数据时，会包括所有的 input 标签，中间件 csrf 接收到数据时，会判断，这个随机字符串是不是第一次它发给用户的那个，如果是，则数据提交成功，如果不是，则返回 403 权限错误。&lt;/p&gt;
+&lt;h2 id=&#34;配置静态文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置静态文件&#34;&gt;#&lt;/a&gt; 配置静态文件&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;在项目根目录下创建 statics 目录。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/Ihbve1.png&#34; alt=&#34;statics创建.jpg&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;写配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在 &lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NldHRpbmdzLnB5&#34;&gt;settings.py&lt;/span&gt;&lt;/strong&gt; 文件的最下方配置找到 STATIC_URL&lt;/p&gt;
+&lt;p&gt;在其下方添加以下配置：&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;STATIC_URL = &#39;/static/&#39; # 别名 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;STATICFILES_DIRS = [ &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    os.path.join(BASE_DIR, &#34;statics&#34;), &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在此目录下可以存放我们的 css 目录，js 目录，images 目录，plugins 目录， 分别放 css 文件，js 文件，图片，插件等等静态资源。&lt;/p&gt;
+&lt;h2 id=&#34;模板继承&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模板继承&#34;&gt;#&lt;/a&gt; 模板继承&lt;/h2&gt;
+&lt;p&gt;模板可以用继承的方式来实现复用，减少冗余内容。&lt;/p&gt;
+&lt;p&gt;网页的头部和尾部内容一般都是一致的，我们就可以通过模板继承来实现复用。&lt;/p&gt;
+&lt;p&gt;父模板用于放置可重复利用的内容，子模板继承父模板的内容，并放置自己的内容&lt;/p&gt;
+&lt;h3 id=&#34;父模板&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#父模板&#34;&gt;#&lt;/a&gt; 父模板&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;标签 block…endblock:&lt;/strong&gt; 父模板中的预留区域，该区域留给子模板填充差异性的内容，不同预留区域名字不能相同。&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % block 名称 %&amp;#125; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;预留给子模板的区域，可以设置设置默认内容&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % endblock 名称 %&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;子模板&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#子模板&#34;&gt;#&lt;/a&gt; 子模板&lt;/h3&gt;
+&lt;p&gt;子模板使用标签 extends 继承父模板：&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % extends &#34;父模板路径&#34;%&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;子模板如果没有设置父模板预留区域的内容，则使用在父模板设置的默认内容，当然也可以都不设置，就为空。&lt;/p&gt;
+&lt;p&gt;子模板设置父模板预留区域的内容：&lt;/p&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % block 名称 % &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;内容 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123; % endblock 名称 %&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;django-模型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#django-模型&#34;&gt;#&lt;/a&gt; Django 模型&lt;/h2&gt;
+&lt;p&gt;Django 模型使用自带的 ORM。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;对象关系映射&lt;/strong&gt;（Object Relational Mapping，简称 ORM ）用于实现面向对象编程语言里不同类型系统的数据之间的转换。&lt;/p&gt;
+&lt;p&gt;ORM 在业务逻辑层和数据库层之间充当了桥梁的作用。&lt;/p&gt;
+&lt;p&gt;ORM 是通过使用描述对象和数据库之间的映射的元数据，将程序中的对象自动持久化到数据库中。&lt;/p&gt;
+&lt;p&gt;ORM 的好处：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以提高我们的开发效率&lt;/li&gt;
+&lt;li&gt;不同的数据库可以平滑切换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ORM 的缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ORM 代码转换为 SQL 语句时，需要花费一定的时间，执行效率会有所降低。&lt;/li&gt;
+&lt;li&gt;使用多了 ORM，会降低编写 SQL 的能力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ORM 的解析过程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;ORM 会将 Python 代码转成为 SQL 语句。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SQL 语句通过 pymysql 传送到数据库服务端。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在数据库中执行 SQL 语句并将结果返回。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/Ihb5d0.png&#34; alt=&#34;Ihb5d0.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置数据库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置数据库&#34;&gt;#&lt;/a&gt; 配置数据库&lt;/h2&gt;
+&lt;p&gt;Django 默认使用的是 sqlite3（是一个轻量级的数据库）&lt;/p&gt;
+&lt;p&gt;我们要连接的是 MySQL 数据库&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先创建一个数据库&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-MySQL&#34;&gt;create database 数据库名称 default charset=utf8; # 防止编码问题，指定为 utf8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;然后再 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NldHRpbmcucHk=&#34;&gt;setting.py&lt;/span&gt; 里面找到 DATABASES&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight django&#34;&gt;&lt;figcaption data-lang=&#34;Django/Jinja2&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;DATABASES = &amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#39;default&#39;: &amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#39;NAME&#39;: &#39;数据库的名称&#39;,  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#39;USER&#39;: &#39;用户名&#39;,  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#39;PASSWORD&#39;: &#39;密码&#39;,  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#39;HOST&#39;: &#39;访问的数据库主机IP地址&#39;,  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#39;PORT&#39;: &#39;默认的MySQL端口&#39;,  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol&gt;
+&lt;li&gt;在项目的 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NldHRpbmcucHk=&#34;&gt;setting.py&lt;/span&gt; 同级目录下的–init–.py 中引入模块和进行配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; pymysql&lt;span class=&#34;token comment&#34;&gt;#确保你有这个库，没有的话使用 pip 进行安装&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pymysql&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;install_as_MySQLdb&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;定义模型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义模型&#34;&gt;#&lt;/a&gt; 定义模型&lt;/h2&gt;
+&lt;p&gt;你之前创建的 APP 的目录结构：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://z3.ax1x.com/2021/11/17/Ihb7JU.png&#34; alt=&#34;app目录结构.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;修改 &lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21vZGVscy5weQ==&#34;&gt;models.py&lt;/span&gt;&lt;/strong&gt;  文件，代码如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# models.py&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; django&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;db &lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; models&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Test&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;models&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Model&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; models&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;CharField&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;max_length&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;以上的类名代表了数据库表名，且继承了 models.Model，类里面的字段代表数据表中的字段 (name)，数据类型则由 CharField（相当于 varchar）、DateField（相当于 datetime）， max_length 参数限定长度。&lt;/p&gt;
+&lt;p&gt;编辑好你的 models 后在 cmd 中运行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python manage.py makemigrations   # 让 Django 知道我们在我们的模型有一些变更
+python manage.py migrate   # 创建表结构
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（在此可能出现的错误是：app 里面的 models 并没有修改，则命令不会运行成功，在你编辑好 models 后运行就没有问题了）&lt;/p&gt;
+</content>
+        <category term="python" />
+        <category term="Django" />
+        <updated>2021-11-15T03:27:52.000Z</updated>
+    </entry>
+</feed>
