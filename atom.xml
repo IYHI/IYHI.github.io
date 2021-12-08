@@ -8,10 +8,50 @@
     <author>
       <name>YH</name>
     </author>
-    <updated>2021-12-07T10:16:50.000Z</updated>
+    <updated>2021-12-08T00:47:23.000Z</updated>
     <category term="java" />
     <category term="python" />
     <category term="算法" />
+    <entry>
+        <id>https://iyhi.github.io/2021/12/08/java/web/Java%20web-4/</id>
+        <title>Java Web程序设计（郭克华）- 4</title>
+        <link rel="alternate" href="https://iyhi.github.io/2021/12/08/java/web/Java%20web-4/"/>
+        <content type="html">&lt;h1 id=&#34;javabean&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#javabean&#34;&gt;#&lt;/a&gt; JavaBean&lt;/h1&gt;
+&lt;h2 id=&#34;认识javabean&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#认识javabean&#34;&gt;#&lt;/a&gt; 认识 Javabean&lt;/h2&gt;
+&lt;p&gt;在 JSP 内嵌大量的 java 代码会造成维护不方便，因此解决这个问题的办法就是将 JSP 中的代码移植到 Java 类中&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s4.ax1x.com/2021/12/08/o2SnRs.png&#34; alt=&#34;JavaBean诞生&#34; height=&#34;50%&#34; width=&#34;50%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这些 java 类就是 JavaBean&lt;/p&gt;
+&lt;p&gt;在 JavaBean 中可以将&lt;strong&gt;逻辑控制、值、数据库访问和其他对象&lt;/strong&gt;进行封装&lt;/p&gt;
+&lt;p&gt;实际上 JavaBean 就是一种 Java 组件技术&lt;/p&gt;
+&lt;p&gt;作用：向用户提供实现特定逻辑的方法接口&lt;/p&gt;
+&lt;p&gt;JavaBean 支持两种组件：可视化组件和非可视化组件&lt;/p&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;可视化组件和非可视化组件&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;可视化组件：开发人员可以在运行结果中看到的界面效果&lt;/p&gt;
+&lt;p&gt;非可视化组件：一般不能被观察到，主要用在服务器端&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;JSP 只支持&lt;strong&gt;非可视化&lt;/strong&gt;组件&lt;/p&gt;
+&lt;p&gt;+++&lt;/p&gt;
+&lt;h1 id=&#34;写javabean&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#写javabean&#34;&gt;#&lt;/a&gt; 写 JavaBean&lt;/h1&gt;
+&lt;p&gt;编写 JavaBean 要注意的事项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;通过 getter/setter 方法来读 / 写变量的值，对应变量首字母必须大写&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;属性的名称由 getter 和 setter 方法决定&lt;/p&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;JavaBean&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; str&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;getXiaoming&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; str&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;setXiaoming&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;str&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;name&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;此时，系统中定义的属性名称为 xiaoming，而不是 str&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;JavaBean 就是一个 Java 类，只是它严格按照 JavaBean 规范编写&lt;/p&gt;
+&lt;hr /&gt;
+</content>
+        <category term="Java" scheme="https://iyhi.github.io/categories/Java/" />
+        <category term="web" scheme="https://iyhi.github.io/categories/Java/web/" />
+        <category term="Java" scheme="https://iyhi.github.io/tags/Java/" />
+        <category term="web" scheme="https://iyhi.github.io/tags/web/" />
+        <updated>2021-12-08T00:47:23.000Z</updated>
+    </entry>
     <entry>
         <id>https://iyhi.github.io/2021/12/07/java/web/Java%20web-3/</id>
         <title>Java Web程序设计（郭克华）- 3</title>
@@ -45,8 +85,8 @@
 &lt;p&gt;&lt;strong&gt;init 方法被设计成只调用一次&lt;/strong&gt;。它在第一次创建 Servlet 时被调用，在后续每次用户请求时不再调用。因此，它是用于一次性初始化，就像 Applet 的 init 方法一样。&lt;/p&gt;
 &lt;p&gt;Servlet 创建于用户第一次调用对应于该 Servlet 的 URL 时，但是也可以指定 Servlet 在服务器第一次启动时被加载。&lt;/p&gt;
 &lt;p&gt;当用户调用一个 Servlet 时，就会创建一个 Servlet 实例，每一个用户请求都会产生一个新的线程，适当的时候移交给 doGet 或 doPost 方法。init () 方法简单地创建或加载一些数据，这些数据将被用于 Servlet 的整个生命周期。&lt;/p&gt;
-&lt;h3 id=&#34;service-方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#service-方法&#34;&gt;#&lt;/a&gt; service () 方法&lt;/h3&gt;
-&lt;p&gt;**service () 方法是执行实际任务的主要方法。**Servlet 容器（即 Web 服务器）调用 service () 方法来处理来自客户端（浏览器）的请求，并把格式化的响应写回给客户端。&lt;/p&gt;
+&lt;h3 id=&#34;service-方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#service-方法&#34;&gt;#&lt;/a&gt; &lt;s&gt;service () 方法&lt;/s&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;service () 方法是执行实际任务的主要方法&lt;/strong&gt; Servlet 容器（即 Web 服务器）调用 service () 方法来处理来自客户端（浏览器）的请求，并把格式化的响应写回给客户端。&lt;/p&gt;
 &lt;p&gt;每次服务器接收到一个 Servlet 请求时，服务器会产生一个新的线程并调用服务。service () 方法检查 HTTP 请求类型（GET、POST、PUT、DELETE 等），并在适当的时候调用 doGet、doPost、doPut，doDelete 等方法。&lt;/p&gt;
 &lt;p&gt;service () 方法由容器调用，service 方法在适当的时候调用 doGet、doPost、doPut、doDelete 等方法。&lt;strong&gt;所以不用对 service () 方法做任何动作，只需要根据来自客户端的请求类型来重写 doGet () 或 doPost () 即可。一般情况下不重写这个方法&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;doget-方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#doget-方法&#34;&gt;#&lt;/a&gt; doGet () 方法&lt;/h3&gt;
@@ -83,15 +123,15 @@
 &lt;figure class=&#34;highlight xml&#34;&gt;&lt;figcaption data-lang=&#34;XML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token prolog&#34;&gt;&amp;lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;web-app&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;xmlns&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;http://xmlns.jcp.org/xml/ns/javaee&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;         &lt;span class=&#34;token attr-name&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;xmlns:&lt;/span&gt;xsi&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;http://www.w3.org/2001/XMLSchema-instance&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;         &lt;span class=&#34;token attr-name&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;xsi:&lt;/span&gt;schemaLocation&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;         &lt;span class=&#34;token attr-name&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;4.0&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;用来设定过滤器的名字&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-class&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;用来设定过滤器的类路径&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-class&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;init-param&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;param-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;param-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;param-value&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;param-value&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;init-param&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;上面设定的名字&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;指定过滤的模式&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;web-app&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;一般常见的过滤模式：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;过滤掉所有文件&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;red&#34;&gt;过滤掉所有文件&lt;/span&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight xml&#34;&gt;&lt;figcaption data-lang=&#34;XML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;FilterName&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;/*&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;意义：访问所有文件之前过滤器都要进行过滤&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;过滤一个或者多个 Servlet&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;red&#34;&gt;过滤一个或者多个 Servlet&lt;/span&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight xml&#34;&gt;&lt;figcaption data-lang=&#34;XML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;FilterName&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;/PATH/ServletName1&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;FilterName&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;/PATH/ServletName2&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;意义：过滤 ServletName1 和 ServletName2&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;过滤一个或者多个目录&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;red&#34;&gt;过滤一个或者多个目录&lt;/span&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight xml&#34;&gt;&lt;figcaption data-lang=&#34;XML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;FilterName&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;/PATH/*&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;url-pattern&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;filter-mapping&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;意义：在访问之前 PATH 路径下的资源时，过滤器需要进行过滤&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -108,14 +148,14 @@
         <title>Java Web程序设计（郭克华）- 2</title>
         <link rel="alternate" href="https://iyhi.github.io/2021/12/07/java/web/Java%20web-2/"/>
         <content type="html">&lt;h2 id=&#34;表单&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#表单&#34;&gt;#&lt;/a&gt; 表单&lt;/h2&gt;
-&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;from&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;action&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;指定要传到的地方&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;提交表单的方式&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;类型&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;用来获得这个值的id&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;默认值&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;from&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;提交表单的方式（常见）：get、post&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;from&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;action&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;指定要传到的地方&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;提交表单的方式&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;类型&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;用来获得这个值的id&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;默认值&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;from&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;提交表单的方式（常见）：&lt;strong&gt;get、post&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;JSP 获得表单的内容&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; %
    // 获取表单中name=&amp;quot;id&amp;quot;的单元格输入内容给str 
    String str = request.getParament(&amp;quot;id&amp;quot;);
    % &amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;获取复选框或者多选列表中的值&lt;/p&gt;
+&lt;p&gt;获取&lt;strong&gt;复选框或者多选列表&lt;/strong&gt;中的值&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; %
    String[] str = request.getParamentValues(&amp;quot;id&amp;quot;);
    % &amp;gt;
@@ -124,7 +164,7 @@
 &lt;p&gt;JSP 规范中定义了 9 中内置对象：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;out 对象&lt;/strong&gt;：负责管理对客户端的输出&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;request 对象&lt;/strong&gt;：负责的到客户端的请求信息&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;request 对象&lt;/strong&gt;：负责得到客户端的请求信息&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;response 对象&lt;/strong&gt;：负责向客户端发送请求&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;session 对象&lt;/strong&gt;：负责保存&lt;strong&gt;同一客户端一次会话过程&lt;/strong&gt;中的一些信息&lt;/li&gt;
 &lt;li&gt;application 对象：表示整个应用的环境信息&lt;/li&gt;
@@ -134,18 +174,18 @@
 &lt;li&gt;config 对象：表示此 JSP 的 ServletConfig&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
-&lt;h3 id=&#34;out对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#out对象&#34;&gt;#&lt;/a&gt; out 对象&lt;/h3&gt;
+&lt;h3 id=&#34;out对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#out对象&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;out 对象&lt;/span&gt;&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;print () 和 println ()，前一个不换行，后一个输出完括号里面的内容想，下一次输出会换行，&lt;strong&gt;但是&lt;/strong&gt;在网页上并不会换行，网页上换行还得 &amp;lt;br&amp;gt;&lt;/li&gt;
-&lt;li&gt;close ()：关闭输出流，强制终止当前页面的剩余部分向浏览器输出&lt;/li&gt;
+&lt;li&gt;print () 和 println ()，前一个不换行，后一个输出完括号里面的内容后，下一次输出会换行，&lt;strong&gt;但是&lt;/strong&gt;在网页上并不会换行，网页上换行还得 &amp;lt;br&amp;gt;&lt;/li&gt;
+&lt;li&gt;close ()：关闭输出流，强制终止当前页面的&lt;strong&gt;剩余部分&lt;/strong&gt;向浏览器输出&lt;/li&gt;
 &lt;li&gt;clearBuffer ()：清除缓冲区里的数据，&lt;strong&gt;并且把数据写到客户端去&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;clear ()：清除缓冲区里的数据，并且 &amp;lt; span style=&amp;quot;color:red&amp;quot;&amp;gt;&lt;strong&gt; 不&lt;/strong&gt; &amp;lt;/span&amp;gt; 把数据写到客户端去&lt;/li&gt;
-&lt;li&gt;getRemaining ()：获取缓冲区没有被占用的大小&lt;/li&gt;
+&lt;li&gt;clear ()：清除缓冲区里的数据，并且&lt;span class=&#34;red&#34;&gt;&lt;strong&gt;不&lt;/strong&gt;&lt;/span&gt;把数据写到客户端去&lt;/li&gt;
+&lt;li&gt;getRemaining ()：获取缓冲区&lt;strong&gt;没有被占用&lt;/strong&gt;的大小&lt;/li&gt;
 &lt;li&gt;flush ()：输出缓冲区的数据（在把数据输出给客户端之后，会把缓冲区的数据删除）&lt;/li&gt;
 &lt;li&gt;getBufferSize ()：获得缓冲区的大小&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
-&lt;h3 id=&#34;request对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#request对象&#34;&gt;#&lt;/a&gt; request 对象&lt;/h3&gt;
+&lt;h3 id=&#34;request对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#request对象&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;request 对象&lt;/span&gt;&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;getMethod ()：得到请求方式&lt;/li&gt;
 &lt;li&gt;getRequestURL ()：得到请求的 URL 地址&lt;/li&gt;
@@ -157,14 +197,14 @@
 &lt;li&gt;getRomteAddr ()：得到客户端的 IP&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
-&lt;h3 id=&#34;response对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#response对象&#34;&gt;#&lt;/a&gt; response 对象&lt;/h3&gt;
-&lt;p&gt;可以利用 response 对象进行重定向&lt;/p&gt;
+&lt;h3 id=&#34;response对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#response对象&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;response 对象&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;可以&lt;strong&gt;利用 response 对象&lt;/strong&gt;进行&lt;strong&gt;重定向&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;response.sendRedirect(目标页面路径)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;重定向的方法主要有两种：&lt;strong&gt;response.sendRedirect&lt;/strong&gt; 和&lt;strong&gt; forward&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;区别：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;从浏览器地址显示来看&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;forword&lt;/strong&gt; 方法属于服务器请求资源，服务器直接访问目标地址，对该目标地址的响应内容进行读取，再把读取的内容发送给客户端浏览器，因此浏览器的地址不变&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;forword&lt;/strong&gt; 方法属于&lt;strong&gt;服务器请求资源&lt;/strong&gt;，服务器&lt;strong&gt;直接访问目标地址&lt;/strong&gt;，对该目标地址的响应内容进行读取，再把读取的内容发送给客户端浏览器，因此浏览器的地址不变&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Redirect&lt;/strong&gt; 方法是告诉客户端，使得浏览器知道去请求哪一个地址，相当于客户端重新请求，所以浏览器地址会显示&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -174,7 +214,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;从功能上来看&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;forword&lt;/strong&gt; 方法只能在同一个 Web 应用程序内的资源之间的转发请求，服务器的内部操作，不可定位到其他应用程序上&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;forword&lt;/strong&gt; 方法只能在&lt;strong&gt;同一个 Web 应用程序内&lt;/strong&gt;的资源之间的转发请求，服务器的内部操作，不可定位到其他应用程序上&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Redirect&lt;/strong&gt; 方法能够重定向到当前应用程序的其他资源、能够重定向到同一个站点上的其他应用程序中的资源、能通过绝对地址重定向到其他站点的资源&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -183,14 +223,14 @@
 &lt;p&gt;&lt;strong&gt;Redirect&lt;/strong&gt; 方法的效率相对较低，因为相当于客户端又发送了一次请求&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;cookie操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cookie操作&#34;&gt;#&lt;/a&gt; COokie 操作&lt;/h2&gt;
+&lt;h2 id=&#34;cookie操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cookie操作&#34;&gt;#&lt;/a&gt; Cookie 操作&lt;/h2&gt;
 &lt;details class=&#34;danger&#34;&gt;&lt;summary&gt;Cookie说明&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;cookie 是一个小的文本数据，由服务器端产生，发送给客户端浏览器，如果客户端浏览器设置为启用 Cookie，则会将这个小的文本数据保存到某个目录下的文本文件内，下次登录同一个网站，客户端浏览器会自动将 cookie 读入之后传给服务器端。在一般情况下，Cookie 中的值是以 key-value 的形式进行表达的&lt;/p&gt;
+&lt;p&gt;cookie 是一个小的&lt;strong&gt;文本数据&lt;/strong&gt;，由&lt;strong&gt;服务器端&lt;/strong&gt;产生，发送给客户端浏览器，如果客户端浏览器设置为启用 Cookie，则会将这个小的文本数据保存到某个目录下的文本文件内，下次登录同一个网站，客户端浏览器会自动将 cookie 读入之后传给服务器端。在一般情况下，Cookie 中的值是以 key-value 的形式进行表达的&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;在写 cookie 时主要用到以下的方法：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;response.addCookie (Cookie C)：通过该方法将 Cookie 写入客户端&lt;/li&gt;
-&lt;li&gt;Cookie.setMacAge (int second)：通过该方法设置 Cookie 的存活时间，参数为秒&lt;/li&gt;
+&lt;li&gt;Cookie.&lt;strong&gt;setMacAge&lt;/strong&gt; (int second)：通过该方法设置 Cookie 的存活时间，参数为秒&lt;/li&gt;
 &lt;/ul&gt;
 </content>
         <category term="Java" scheme="https://iyhi.github.io/categories/Java/" />
@@ -203,21 +243,21 @@
         <id>https://iyhi.github.io/2021/12/07/java/web/Java%20web-1/</id>
         <title>Java Web程序设计（郭克华）- 1</title>
         <link rel="alternate" href="https://iyhi.github.io/2021/12/07/java/web/Java%20web-1/"/>
-        <content type="html">&lt;h2 id=&#34;web-基本认识&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web-基本认识&#34;&gt;#&lt;/a&gt; Web 基本认识&lt;/h2&gt;
-&lt;h3 id=&#34;什么是web&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是web&#34;&gt;#&lt;/a&gt; 什么是 web&lt;/h3&gt;
+        <content type="html">&lt;h1 id=&#34;web-基本认识&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web-基本认识&#34;&gt;#&lt;/a&gt; Web 基本认识&lt;/h1&gt;
+&lt;h2 id=&#34;什么是web&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是web&#34;&gt;#&lt;/a&gt; 什么是 web&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Web 就是网页，网页其实是基于 B/S 模式的应用程序&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;B/S : Browser / Server（浏览器 / 服务器）&lt;/strong&gt;&lt;br /&gt;
 &lt;strong&gt;C/S : Client / Server（客户机 / 服务器）&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;web组成&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web组成&#34;&gt;#&lt;/a&gt; Web 组成&lt;/h3&gt;
+&lt;h2 id=&#34;web组成&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web组成&#34;&gt;#&lt;/a&gt; Web 组成&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;浏览器 ：代替用户向服务器发送请求&lt;/strong&gt;&lt;br /&gt;
 &lt;strong&gt;服务器 ：接收用户请求并响应&lt;/strong&gt;&lt;br /&gt;
 &lt;strong&gt;通信协议 ：规范数据传输及打包方式&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#服务器&#34;&gt;#&lt;/a&gt; 服务器&lt;/h2&gt;
-&lt;h4 id=&#34;作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#作用&#34;&gt;#&lt;/a&gt; 作用&lt;/h4&gt;
+&lt;h1 id=&#34;服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#服务器&#34;&gt;#&lt;/a&gt; 服务器&lt;/h1&gt;
+&lt;h2 id=&#34;作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#作用&#34;&gt;#&lt;/a&gt; 作用&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;接收用户请求并响应&lt;/strong&gt;&lt;br /&gt;
 &lt;strong&gt;存储数据&lt;/strong&gt;&lt;br /&gt;
 &lt;strong&gt;具有安全性功能&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&#34;产品&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#产品&#34;&gt;#&lt;/a&gt; 产品&lt;/h4&gt;
+&lt;h2 id=&#34;产品&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#产品&#34;&gt;#&lt;/a&gt; 产品&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Tomcat&lt;/strong&gt;（本书中以此为教学）&lt;/p&gt;
@@ -233,7 +273,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h3 id=&#34;创建web项目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建web项目&#34;&gt;#&lt;/a&gt; 创建 Web 项目&lt;/h3&gt;
+&lt;h1 id=&#34;创建web项目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建web项目&#34;&gt;#&lt;/a&gt; 创建 Web 项目&lt;/h1&gt;
 &lt;p&gt;文件用途：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;src&lt;/strong&gt; 目录：用来存放 Java 源文件。&lt;/li&gt;
@@ -249,15 +289,15 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;静态文件：包括所有的 HTML 网页、CSS 文件、图像文件等，按照功能以文件夹形式分类。&lt;/li&gt;
+&lt;li&gt;静态文件：包括所有的 HTML 网页、CSS 文件、图像文件等，&lt;strong&gt;按照功能以文件夹形式分类。&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;JSP 文件：利用 JSP 可以很方便的在页面中生成动态的内容。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h2 id=&#34;html基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#html基础&#34;&gt;#&lt;/a&gt; HTML 基础&lt;/h2&gt;
-&lt;h3 id=&#34;html简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#html简介&#34;&gt;#&lt;/a&gt; HTML 简介&lt;/h3&gt;
+&lt;h1 id=&#34;html基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#html基础&#34;&gt;#&lt;/a&gt; HTML 基础&lt;/h1&gt;
+&lt;h2 id=&#34;html简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#html简介&#34;&gt;#&lt;/a&gt; HTML 简介&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;HTML 指的是超文本标记语言 (&lt;strong&gt;H&lt;/strong&gt;yper &lt;strong&gt;T&lt;/strong&gt;ext &lt;strong&gt;M&lt;/strong&gt;arkup &lt;strong&gt;L&lt;/strong&gt;anguage)&lt;/p&gt;
+&lt;p&gt;HTML 指的是&lt;strong&gt;超文本标记语言&lt;/strong&gt; (&lt;strong&gt;H&lt;/strong&gt;yper &lt;strong&gt;T&lt;/strong&gt;ext &lt;strong&gt;M&lt;/strong&gt;arkup &lt;strong&gt;L&lt;/strong&gt;anguage)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;HTML 不是一种编程语言，而是一种&lt;em&gt;标记语言&lt;/em&gt; (markup language)&lt;/p&gt;
@@ -271,7 +311,7 @@
 &lt;/ul&gt;
 &lt;p&gt;详情请看 html&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h2 id=&#34;jsp编程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp编程&#34;&gt;#&lt;/a&gt; JSP 编程&lt;/h2&gt;
+&lt;h1 id=&#34;jsp编程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp编程&#34;&gt;#&lt;/a&gt; JSP 编程&lt;/h1&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt;% @ page language = &amp;quot;java&amp;quot; contentType = &amp;quot;text/html; charset = gh2312&amp;quot; %&amp;gt;
 &amp;lt;hmtl&amp;gt;
     &amp;lt;body&amp;gt;
@@ -284,21 +324,19 @@
 &lt;p&gt;里面的 out.print（）函数是 java 代码，所以是由 &amp;lt;%%&amp;gt; 包围起来的&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;JSP 和 HTML 有什么区别？&lt;/li&gt;
-&lt;li&gt;&amp;lt;font color=&amp;quot;red&amp;quot;&amp;gt;&lt;strong&gt;HTML 是静态页面，JSP 页面是由 JSP 容器执行该页面的 java 代码部分，然后实时生成的 HTML 页面&lt;/strong&gt; &amp;lt;/font&amp;gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;red&#34;&gt;&lt;strong&gt;HTML 是静态页面，JSP 页面是由 JSP 容器执行该页面的 java 代码部分，然后实时生成的 HTML 页面&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;jsp表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp表达式&#34;&gt;#&lt;/a&gt; JSP 表达式&lt;/h3&gt;
+&lt;h2 id=&#34;jsp表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp表达式&#34;&gt;#&lt;/a&gt; JSP 表达式&lt;/h2&gt;
 &lt;p&gt;JSP 表达式用于定义 JSP 的一些输出，基本语法如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; % = 变量/返回值/表达式 % &amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;eg：“&amp;lt;% = mag %&amp;gt;” 等价于 &amp;lt; % out.print (“mag”);% &amp;gt;&lt;/p&gt;
 &lt;p&gt;使用 JSP 表达式需要注意的细节：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在 JSP 表达式中不需要以 **；** 结束&lt;/li&gt;
-&lt;li&gt;在 JSP 表达式中不能出现多条语句&lt;/li&gt;
-&lt;li&gt;JSP 表达式中的内容一定是字符串类型，或者能通过 toString () 函数转换成字符串的形式。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;在 JSP 表达式中不需要以 &lt;span class=&#34;red&#34;&gt;&lt;strong&gt;;&lt;/strong&gt;&lt;/span&gt; 结束&lt;/p&gt;
+&lt;p&gt;在 JSP 表达式中不能出现多条语句&lt;/p&gt;
+&lt;p&gt;JSP 表达式中的内容&lt;strong&gt;一定是字符串类型&lt;/strong&gt;，或者&lt;strong&gt;能通过 toString () 函数转换成字符串的形式。&lt;/strong&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3 id=&#34;jsp声明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp声明&#34;&gt;#&lt;/a&gt; JSP 声明&lt;/h3&gt;
+&lt;h2 id=&#34;jsp声明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp声明&#34;&gt;#&lt;/a&gt; JSP 声明&lt;/h2&gt;
 &lt;p&gt;JSP 程序段中变量必须先声明后使用&lt;/p&gt;
 &lt;p&gt;像：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; %
@@ -307,22 +345,22 @@
    % &amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这样是会报错的&lt;/p&gt;
-&lt;p&gt;但是 JSP 可以定义全局声明和局部声明，像上面的就是局部申明&lt;/p&gt;
+&lt;p&gt;但是 JSP 可以定义&lt;strong&gt;全局声明和局部声明&lt;/strong&gt;，像上面的就是局部申明&lt;/p&gt;
 &lt;details class=&#34;info&#34;&gt;&lt;summary&gt;全局声明和局部声明的判断&lt;/summary&gt;&lt;div&gt;
 &lt;p&gt;JSP 中定义 &amp;lt;% ! x=0%&amp;gt; 与 &amp;lt;% y=0%&amp;gt;&lt;/p&gt;
 &lt;p&gt;JSP 在运行过程是&lt;strong&gt;只有第一次会翻译成 servlet&lt;/strong&gt;，x 只会有第一次的会初始化为 o，** 以后都不会再次执行该语句 &amp;lt;% ! x=0%&amp;gt;，x 会一直存在。** 即 x 表示全局变量。&lt;/p&gt;
 &lt;p&gt;而 &amp;lt;% y=0%&amp;gt; 语句在&lt;strong&gt;每次调用该 JSP 的时候都会执行一遍&lt;/strong&gt;，每次都会从先定义并初始化为 0，即 y 为局部变量&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
-&lt;p&gt;全局变量在任何地方都可以调用，在实际应用中，类、方法和全局变量都可以放在声明部分&lt;/p&gt;
-&lt;h2 id=&#34;jsp指令和动作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp指令和动作&#34;&gt;#&lt;/a&gt; JSP 指令和动作&lt;/h2&gt;
-&lt;h3 id=&#34;指令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#指令&#34;&gt;#&lt;/a&gt; 指令&lt;/h3&gt;
-&lt;p&gt;JSP 指令是告诉 JSP 引擎对 JSP 页面如何编译，不包括控制逻辑，不会产生任何可见的输出，&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;全局变量在任何地方都可以调用&lt;/strong&gt;，在实际应用中，类、方法和全局变量都可以放在声明部分&lt;/p&gt;
+&lt;h1 id=&#34;jsp指令和动作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp指令和动作&#34;&gt;#&lt;/a&gt; JSP 指令和动作&lt;/h1&gt;
+&lt;h2 id=&#34;指令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#指令&#34;&gt;#&lt;/a&gt; 指令&lt;/h2&gt;
+&lt;p&gt;JSP 指令是告诉 JSP 引擎对 JSP 页面如何编译，不包括控制逻辑，不会产生任何可见的输出&lt;/p&gt;
 &lt;p&gt;使用方法：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; % @ 指令类型 属性1 = “值” ... 属性n=“属性值n”  % &amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;&amp;lt;span style=&amp;quot;color:red&amp;quot;&amp;gt; 属性名是大小写敏感的 &amp;lt;/span&amp;gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;JSP 指令有：&lt;strong&gt;page&lt;/strong&gt;、&lt;strong&gt;include&lt;/strong&gt;、&lt;strong&gt;taglib&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&#34;page指令作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#page指令作用&#34;&gt;#&lt;/a&gt; page 指令作用&lt;/h4&gt;
+&lt;p&gt;&lt;span class=&#34;red&#34;&gt;&lt;strong&gt;属性名是大小写敏感的&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;JSP 指令有：&lt;span class=&#34;red&#34;&gt;&lt;strong&gt;page&lt;/strong&gt;、&lt;strong&gt;include&lt;/strong&gt;、&lt;strong&gt;taglib&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;page指令作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#page指令作用&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;page 指令作用&lt;/span&gt;&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;导入包&lt;/p&gt;
@@ -350,17 +388,17 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;还有其他属性，但是使用较少&lt;/p&gt;
-&lt;h4 id=&#34;include&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#include&#34;&gt;#&lt;/a&gt; include&lt;/h4&gt;
+&lt;h3 id=&#34;include指令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#include指令&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;include 指令&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;使用 include 指令可以在 JSP 程序中插入多个外部文件，这些文件可以是 JSP、Java 程序或者 HTML，甚至文本&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; % @ include file = &amp;quot;文件名&amp;quot; % &amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;file 属性是 include 指令的必要属性，用于指定包含哪个文件&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;会把变量也包含进来&lt;/strong&gt;，所以当有变量重名的时候就会有问题&lt;/p&gt;
-&lt;h4 id=&#34;taglib-指令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#taglib-指令&#34;&gt;#&lt;/a&gt; taglib 指令&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;file 属性是 include 指令的必要属性&lt;/strong&gt;，用于指定包含哪个文件&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;red&#34;&gt;&lt;strong&gt;会把变量也包含进来&lt;/strong&gt;，所以当有变量重名的时候就会有问题&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;taglib-指令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#taglib-指令&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;taglib 指令&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;定义一个标签库以及其自定义标签的前缀.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt;%@ taglib uri=&amp;quot;URIToTagLibrary&amp;quot; prefix=&amp;quot;tagPrefix&amp;quot; %&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;jsp动作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp动作&#34;&gt;#&lt;/a&gt; JSP 动作&lt;/h3&gt;
+&lt;h2 id=&#34;jsp动作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp动作&#34;&gt;#&lt;/a&gt; JSP 动作&lt;/h2&gt;
 &lt;p&gt;JSP 动作指使用 XML 语法格式的标记来控制服务器的行为&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; JSP：动作名 属性1 = &amp;quot;属性1值&amp;quot; ... 属性n = &amp;quot;属性n值&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -373,10 +411,10 @@
 &lt;li&gt;&lt;strong&gt;JSP：forward&lt;/strong&gt;   表示将请求转到另一个页面&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;JSP：useBean&lt;/strong&gt;  表示获得一个 JavaBean 的实例&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;JSP：setProperty&lt;/strong&gt;  表示设置 JavaBean 的属性&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;JSP.getProperty&lt;/strong&gt;  表示获得 JavaBean 的属性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JSP：getProperty&lt;/strong&gt;  表示获得 JavaBean 的属性&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;JSP：plugin&lt;/strong&gt;  表示根据浏览器的类型为 Java 插件生成 OBJECT 或者 EMJECT 两种标记&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;include-动作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#include-动作&#34;&gt;#&lt;/a&gt; include 动作&lt;/h4&gt;
+&lt;h3 id=&#34;include-动作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#include-动作&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;include 动作&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;和 include 指令差不多&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; % jsp:include file = &amp;quot;文件名&amp;quot; % &amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -384,10 +422,10 @@
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; %jsp:include file = &amp;quot;文件名&amp;quot;&amp;gt;相关信息&amp;lt;/%jsp:include&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ol&gt;
-&lt;li&gt;include 动作只会把文件中的输出包含进来，因此指令出现的问题不会出现在这&lt;/li&gt;
+&lt;li&gt;include 动作&lt;strong&gt;只会把文件中的&lt;span class=&#34;red&#34;&gt;输出&lt;/span&gt;包含进来&lt;/strong&gt;，因此指令出现的问题不会出现在这&lt;/li&gt;
 &lt;li&gt;include 动作会自动检查被包含文件的变化，也就是说当被包含资源内容发生变化时，如果使用的是&lt;strong&gt; include 指令&lt;/strong&gt;，服务器可能不会检测到&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;forward动作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#forward动作&#34;&gt;#&lt;/a&gt; forward 动作&lt;/h4&gt;
+&lt;h3 id=&#34;forward动作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#forward动作&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;forward 动作&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;可以实现跳转&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; % jsp:forward page = &amp;quot;文件名&amp;quot; % &amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
