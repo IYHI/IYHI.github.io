@@ -544,7 +544,7 @@
     </entry>
     <entry>
         <id>https://iyhi.github.io/2021/12/04/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6/</id>
-        <title>算法之合并数组</title>
+        <title>算法之计算最小深度</title>
         <link rel="alternate" href="https://iyhi.github.io/2021/12/04/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6/"/>
         <content type="html">&lt;h3 id=&#34;最小深度算法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#最小深度算法&#34;&gt;#&lt;/a&gt; 最小深度算法&lt;/h3&gt;
 &lt;p&gt;说明：计算树节点的最小深度&lt;/p&gt;
@@ -700,7 +700,7 @@
     </entry>
     <entry>
         <id>https://iyhi.github.io/2021/11/28/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8F%8C%E6%8C%87%E9%92%88/</id>
-        <title>算法之统计素数</title>
+        <title>算法之双指针</title>
         <link rel="alternate" href="https://iyhi.github.io/2021/11/28/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E4%B9%8B%E5%8F%8C%E6%8C%87%E9%92%88/"/>
         <content type="html">&lt;h3 id=&#34;删除排序数组中的重复项&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除排序数组中的重复项&#34;&gt;#&lt;/a&gt; 删除排序数组中的重复项&lt;/h3&gt;
 &lt;p&gt;说明：&lt;strong&gt;有序数组&lt;/strong&gt; nums，在它自身原地删除重复项，返回删除重复项后&lt;strong&gt;数组的长度&lt;/strong&gt;。&lt;/p&gt;
