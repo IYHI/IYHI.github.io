@@ -489,7 +489,7 @@ stu.put &#39;2018111701&#39;, &#39;basic_info:birthday&#39;,&#39;2018-10-01&#39;
 &lt;div class=&#34;note danger&#34;&gt;
 &lt;p&gt;可选👇&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;**过滤器种类**&#34;&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;过滤器种类&#34;&gt;
 &lt;p&gt;过滤器基本上有以下 5 种：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;RowFilter 基于 RowKey 的过滤&lt;/li&gt;
