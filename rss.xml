@@ -690,6 +690,135 @@ stu.put &#39;2018111701&#39;, &#39;basic_info:birthday&#39;,&#39;2018-10-01&#39;
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">https://iyhi.github.io/2021/12/12/%E5%A4%A7%E6%95%B0%E6%8D%AE/hbase/%E5%AD%A6%E5%89%8D%E8%AF%B4%E6%98%8E/</guid>
+            <title>HBase学习前的说明</title>
+            <link>https://iyhi.github.io/2021/12/12/%E5%A4%A7%E6%95%B0%E6%8D%AE/hbase/%E5%AD%A6%E5%89%8D%E8%AF%B4%E6%98%8E/</link>
+            <category term="大数据" scheme="https://iyhi.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" />
+            <category term="HBase" scheme="https://iyhi.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/HBase/" />
+            <category term="HBase" scheme="https://iyhi.github.io/tags/HBase/" />
+            <pubDate>Sun, 12 Dec 2021 16:40:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;绪论&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#绪论&#34;&gt;#&lt;/a&gt; 绪论&lt;/h1&gt;
+&lt;p&gt;数据库管理经历了人工管理、文件系统、数据库系统三个阶段。&lt;/p&gt;
+&lt;p&gt;人工管理阶段和文件系统阶段的数据共享性差、冗余度高，数据库系统的出现解决了这两个问题。&lt;/p&gt;
+&lt;p&gt;因为互联网的发展，数据库系统管理的数据及其应用环境发生了很大的变化，主要表示为应用领域越来越广泛，数据种类越来越复杂 和多样，并且数据量剧增，传统的关系型数据库已经无法满足用户需求了，所以 NoSQL 就诞生了。&lt;/p&gt;
+&lt;p&gt;数据库根据不同的逻辑模型可以分成三种：&lt;strong&gt;层次型、网状型和关系型&lt;/strong&gt;&lt;/p&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;层次型数据库&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;数据模型&lt;/strong&gt;采用了&lt;strong&gt;树形 (层次) 结构&lt;/strong&gt;的数据库。在这种属性结构中，数据按自然的层次关系组织起来，以反映数据之间的隶属关系。&lt;/p&gt;
+&lt;p&gt;层次数据模型就是的图形表示就是&lt;strong&gt;一个倒立生长的树&lt;/strong&gt;，由基本数据结构中的树（或者二叉树）的定义可知，&lt;strong&gt;每棵树都有且仅有一个根节点&lt;/strong&gt;，其余的节点都是非根节点。每个节点表示一个记录类型对应与实体的概念，记录类型的各个字段对应实体的各个属性。各个记录类型及其字段都必须记录。&lt;/p&gt;
+&lt;p&gt;由于层次型数据库的结构简单，会导致数据冗余度过高。&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;warning&#34;&gt;&lt;summary&gt;网状型数据库&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;采用网状型数据模型的数据库称为网状型数据库&lt;/strong&gt;，通过网络结构表示数据与数据间的联系。&lt;/p&gt;
+&lt;p&gt;各个节点没有明确的从属关系，&lt;strong&gt;一个节点可以与其他多个节点建立联系&lt;/strong&gt;，即节点之间的联系是任意的。&lt;/p&gt;
+&lt;p&gt;由于应用范围的扩展，网状结构会变得越来越复杂，不利于用户掌握。&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;关系型数据库&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;满足一定条件的二维表格来表示实体集合以及实体间联系的一种数据模型，使用灵活方便，适应面广&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;hr /&gt;
+&lt;h1 id=&#34;数据库管理系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库管理系统&#34;&gt;#&lt;/a&gt; 数据库管理系统&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;数据库管理系统&lt;/strong&gt; (Database Management System) 是一种&lt;strong&gt;操纵和管理数据库的大型软件&lt;/strong&gt;，用于建立、使用和维护数据库，&lt;strong&gt;简称 DBMS&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;它对数据库进行统一的管理和控制，以保证数据库的安全性和完整性。用户通过 DBMS 访问数据库中的数据，数据库管理员也通过 DBMS 进行数据库的维护工作。它可以支持多个应用程序和用户用不同的方法在同时或不同时刻去建立，修改和询问数据库。大部分 DBMS 提供&lt;strong&gt;数据定义语言 DDL&lt;/strong&gt;（Data Definition Language）和&lt;strong&gt;数据操作语言 DML&lt;/strong&gt;（Data Manipulation Language），供用户定义数据库的模式结构与权限约束，实现对数据的追加、删除等操作。&lt;/p&gt;
+&lt;p&gt;DBMS 的主要功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据定义&lt;/li&gt;
+&lt;li&gt;数据操作&lt;/li&gt;
+&lt;li&gt;数据库的运行管理&lt;/li&gt;
+&lt;li&gt;数据组织、存储和管理&lt;/li&gt;
+&lt;li&gt;数据库的维护&lt;/li&gt;
+&lt;li&gt;通信&lt;/li&gt;
+&lt;/ul&gt;
+&lt;details class=&#34;danger&#34;&gt;&lt;summary&gt;详细说明&lt;/summary&gt;&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据定义&lt;/strong&gt;：DBMS 提供数据定义语言 DDL（Data Definition Language），供用户定义数据库的三级模式结构、两级映像以及完整性约束和保密限制等约束。DDL 主要用于建立、修改数据库的库结构。DDL 所描述的库结构仅仅给出了数据库的框架，数据库的框架信息被存放在数据字典（Data Dictionary）中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据操作&lt;/strong&gt;：DBMS 提供数据操作语言 DML（Data Manipulation Language），供用户实现对数据的追加、删除、更新、查询等操作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据库的运行管理&lt;/strong&gt;：数据库的运行管理功能是 DBMS 的运行控制、管理功能，包括多用户环境下的并发控制、安全性检查和存取限制控制、完整性检查和执行、运行日志的组织管理、事务的管理和自动恢复，即保证事务的原子性。这些功能保证了数据库系统的正常运行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据组织、存储与管理&lt;/strong&gt;：DBMS 要分类组织、存储和管理各种数据，包括数据字典、用户数据、存取路径等，需确定以何种文件结构和存取方式在存储级上组织这些数据，如何实现数据之间的联系。&lt;strong&gt;数据组织和存储的基本目标是提高存储空间利用率&lt;/strong&gt;，选择合适的存取方法提高存取效率。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据库的保护&lt;/strong&gt;：数据库中的数据是信息社会的战略资源，所以数据的保护至关重要。DBMS&lt;strong&gt; 对数据库的保护&lt;/strong&gt;通过 4 个方面来实现：&lt;strong&gt;数据库的恢复、数据库的并发控制、数据库的完整性控制、数据库安全性控制&lt;/strong&gt;。DBMS 的其他保护功能还有系统缓冲区的管理以及数据存储的某些自适应调节机制等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据库的维护&lt;/strong&gt;：这一部分包括数据库的数据载入、转换、转储、数据库的重组合重构以及性能监控等功能，这些功能分别由各个使用程序来完成。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通信&lt;/strong&gt;：DBMS 具有与操作系统的联机处理、分时系统及远程作业输入的相关接口，负责处理数据的传送。对网络环境下的数据库系统，还应该包括 DBMS 与网络中其他软件系统的通信功能以及数据库之间的互操作功能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;来自百度百科&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;&lt;strong&gt;DBMS 是数据库系统的核心，是管理数据库的软件&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;关系型数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关系型数据库&#34;&gt;#&lt;/a&gt; 关系型数据库&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;二维表：也称关系，它是一系列二维数组的集合，用来代表与存储对消之间的关系。&lt;/li&gt;
+&lt;li&gt;行：也叫元组或记录，代表一个实体&lt;/li&gt;
+&lt;li&gt;列：也叫字段或属性。&lt;/li&gt;
+&lt;li&gt;主属性：关系中的某一属性组，若他们的值能唯一的标识一个记录，则称该属性组为主属性或者主键&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;结构化查询语言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#结构化查询语言&#34;&gt;#&lt;/a&gt; 结构化查询语言&lt;/h2&gt;
+&lt;p&gt;关系型数据库的核心是其结构化查询语言（Structured Query Language，SQL）&lt;/p&gt;
+&lt;h3 id=&#34;数据定义语言ddl&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据定义语言ddl&#34;&gt;#&lt;/a&gt; 数据定义语言 DDL&lt;/h3&gt;
+&lt;p&gt;包括：&lt;strong&gt;CREATE&lt;/strong&gt;（创建）、&lt;strong&gt;DROP&lt;/strong&gt;（删除）、&lt;strong&gt;ALTER&lt;/strong&gt;（数据库对象的修改）&lt;/p&gt;
+&lt;h3 id=&#34;数据查询语言dqlselect&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据查询语言dqlselect&#34;&gt;#&lt;/a&gt; 数据查询语言 DQL：select&lt;/h3&gt;
+&lt;h3 id=&#34;数据操纵语言dml&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据操纵语言dml&#34;&gt;#&lt;/a&gt; 数据操纵语言 DML&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;INSERT&lt;/strong&gt;（插入）、&lt;strong&gt;UPDATE&lt;/strong&gt;（更新）、&lt;strong&gt;DELETE&lt;/strong&gt;（删除）&lt;/p&gt;
+&lt;h2 id=&#34;关系型数据库优缺点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关系型数据库优缺点&#34;&gt;#&lt;/a&gt; 关系型数据库优缺点&lt;/h2&gt;
+&lt;h3 id=&#34;优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#优点&#34;&gt;#&lt;/a&gt; 优点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;容易理解&lt;/li&gt;
+&lt;li&gt;使用方便&lt;/li&gt;
+&lt;li&gt;易于维护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;缺点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#缺点&#34;&gt;#&lt;/a&gt; 缺点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;高并发读写能力差&lt;/li&gt;
+&lt;li&gt;对海量数据的读写效率低&lt;/li&gt;
+&lt;li&gt;扩展性差&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h1 id=&#34;nosql数据库的特点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nosql数据库的特点&#34;&gt;#&lt;/a&gt; NoSQL 数据库的特点&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;灵活的数据模型&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可伸缩性强&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动分片&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动复制&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;details class=&#34;danger&#34;&gt;&lt;summary&gt;CAP理论&lt;/summary&gt;&lt;div&gt;
+&lt;ul&gt;
+&lt;li&gt;C（一致性）：所有的节点上的数据时刻保持同步&lt;/li&gt;
+&lt;li&gt;A（可用性）：每个请求都能接受到一个响应，无论响应成功或失败&lt;/li&gt;
+&lt;li&gt;P（分区容错）：系统应该能持续提供服务，即使系统内部有消息丢失（分区）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;CAP 理论认为分布式系统最多只能兼顾其中两个特性&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;由于数据是海量的，而且是不允许丢失的，因此需要采用分布式、多福本的方式进行存储，分区容错性是很多 NoSQL 数据库必须兼备的，那么就要在一致性和可用性进行权衡，于是出现了&lt;strong&gt; BASE 理论&lt;/strong&gt;，给出了一种权衡 A 与 C 的可行方案。&lt;/p&gt;
+&lt;details class=&#34;danger&#34;&gt;&lt;summary&gt;BASE理论&lt;/summary&gt;&lt;div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;基本可用 (Basically Available)&lt;/strong&gt;： 基本可用是指分布式系统在出现故障的时候，&lt;strong&gt;允许损失部分可用性，即保证核心可用&lt;/strong&gt;。电商大促时，为了应对访问量激增，部分用户可能会被引导到降级页面，服务层也可能只提供降级服务。这就是损失部分可用性的体现。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;软状态 (Soft State)&lt;/strong&gt;： &lt;strong&gt;软状态是指允许系统存在中间状态&lt;/strong&gt;，而该中间状态不会影响系统整体可用性。&lt;strong&gt;分布式存储中一般一份数据至少会有三个副本&lt;/strong&gt;，&lt;strong&gt;允许不同节点间副本同步的延时&lt;/strong&gt;就是软状态的体现。MySQL Replication 的异步复制也是一种体现。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;最终一致性 (Eventual Consistency)&lt;/strong&gt;： &lt;strong&gt;最终一致性是指系统中的所有数据副本经过一定时间后，最终能够达到一致的状态&lt;/strong&gt;。弱一致性和强一致性相反，最终一致性是弱一致性的一种特殊情况。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;最终一致性&lt;/strong&gt;是 BASE 的核心，也是 NoSQL 的主要特点&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h1 id=&#34;nosql数据库分类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nosql数据库分类&#34;&gt;#&lt;/a&gt; NoSQL 数据库分类&lt;/h1&gt;
+&lt;p&gt;典型的 NoSQL 划分为 4 种类型，分别是&lt;strong&gt;键值数据库&lt;/strong&gt;、&lt;strong&gt;列式数据库&lt;/strong&gt;、&lt;strong&gt;文档数据库&lt;/strong&gt;和&lt;strong&gt;图形数据库&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s4.ax1x.com/2021/12/15/TSOOU0.gif&#34; alt=&#34;&#34; width=&#34;60%&#34; higth=&#34;60%&#34; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;键值数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#键值数据库&#34;&gt;#&lt;/a&gt; 键值数据库&lt;/h2&gt;
+&lt;p&gt;它使用一个&lt;strong&gt;哈希表&lt;/strong&gt;，&lt;strong&gt;表中的 Key（键）用来定位 Value（值）&lt;/strong&gt;，即存储和检索具体的 Value。&lt;strong&gt;数据库不能对 Value 进行索引和查询&lt;/strong&gt;，只能通过 Key 进行查询。&lt;strong&gt;Value 可以用来存储任意类型的数据&lt;/strong&gt;，包括整型、字符型、数组、对象等。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;列族数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#列族数据库&#34;&gt;#&lt;/a&gt; 列族数据库&lt;/h2&gt;
+&lt;p&gt;通常用来应对分布式存储的海量数据。键依然存在，但是它们指向多列&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s4.ax1x.com/2021/12/15/TSXTJK.gif&#34; alt=&#34;&#34; width=&#34;60%&#34; higth=&#34;60%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;每一行都有关键字 row key 。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;文档数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文档数据库&#34;&gt;#&lt;/a&gt; 文档数据库&lt;/h2&gt;
+&lt;p&gt;文档数据库是&lt;strong&gt;通过键来定位一个文档&lt;/strong&gt;的，所以是键值数据库的一种衍生品。&lt;strong&gt;在文档数据库中，文档是数据库的最小单位&lt;/strong&gt;。文档数据库可以使用模式来指定某个文档结构。&lt;/p&gt;
+&lt;p&gt;文档数据库是 NoSQL 数据库类型中出现得最自然的类型，因为它们是按照日常文档的存储来设计的，并且允许对这些数据进行复杂的查询和计算。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;图形数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#图形数据库&#34;&gt;#&lt;/a&gt; 图形数据库&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;图形数据库以图论为基础&lt;/strong&gt;，用图来表示一个对象集合，包括顶点及连接顶点的边。&lt;/p&gt;
+&lt;p&gt;图形数据库使用图作为数据模型来存储数据，可以高效地存储不同顶点之间的关系。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;图形数据库&lt;/strong&gt;是 NoSQL 数据库类型中&lt;strong&gt;最复杂&lt;/strong&gt;的一个，旨在以高效的方式存储实体之间的关系。&lt;/p&gt;
+&lt;p&gt;图形数据库适用于高度相互关联的数据，可以高效地处理实体间的关系，尤其适合于社交网络、依赖分析、模式识别、推荐系统、路径寻找、科学论文引用，以及资本资产集群等场景。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://iyhi.github.io/2021/12/08/java/web/Java%20web-4/</guid>
             <title>Java Web程序设计（郭克华）- 4</title>
             <link>https://iyhi.github.io/2021/12/08/java/web/Java%20web-4/</link>
