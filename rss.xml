@@ -10,11 +10,57 @@
         </author>
         <description>生命是有光的。在我熄灭以前，能够照亮你一点，就是我所有能做的了。</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 13 Dec 2021 14:00:00 +0800</pubDate>
-        <lastBuildDate>Mon, 13 Dec 2021 14:00:00 +0800</lastBuildDate>
+        <pubDate>Sun, 19 Dec 2021 16:50:53 +0800</pubDate>
+        <lastBuildDate>Sun, 19 Dec 2021 16:50:53 +0800</lastBuildDate>
         <category term="java" />
         <category term="python" />
         <category term="算法" />
+        <item>
+            <guid isPermalink="true">https://iyhi.github.io/2021/12/19/%E6%9D%82%E8%AF%B4/%E9%9A%8F%E5%BF%83%E5%86%99/%E8%AE%B0%E5%BD%95%E5%9C%A82021%E5%B9%B412%E6%9C%8819%E6%97%A5/</guid>
+            <title>烦闷的12月19号</title>
+            <link>https://iyhi.github.io/2021/12/19/%E6%9D%82%E8%AF%B4/%E9%9A%8F%E5%BF%83%E5%86%99/%E8%AE%B0%E5%BD%95%E5%9C%A82021%E5%B9%B412%E6%9C%8819%E6%97%A5/</link>
+            <category term="杂说" scheme="https://iyhi.github.io/categories/%E6%9D%82%E8%AF%B4/" />
+            <category term="随缘记录" scheme="https://iyhi.github.io/categories/%E6%9D%82%E8%AF%B4/%E9%9A%8F%E7%BC%98%E8%AE%B0%E5%BD%95/" />
+            <category term="杂说" scheme="https://iyhi.github.io/tags/%E6%9D%82%E8%AF%B4/" />
+            <category term="随缘记录" scheme="https://iyhi.github.io/tags/%E9%9A%8F%E7%BC%98%E8%AE%B0%E5%BD%95/" />
+            <pubDate>Sun, 19 Dec 2021 16:50:53 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;在这个&lt;s&gt;光和明媚&lt;/s&gt;闷热的图书馆下午，过几天就要考试了，可是现在一点也紧张不起来，可能是复习的&lt;s&gt;特别好&lt;/s&gt;没效率吧🙃&lt;/p&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;点我~来首歌~~！！&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;​	 &lt;div class=&#34;media-container&#34;&gt;&lt;div class=&#34;player&#34; data-type=&#34;audio&#34; data-src=&#39;[{&#34;title&#34;:&#34;列表 1&#34;,&#34;list&#34;:[&#34;https://music.163.com/#/playlist?id=5342642424&#34;]}]&#39;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;emmmmmm~~~~ 确实很惬意😸&lt;/p&gt;
+&lt;p&gt;那为什么会烦闷呢😔    原因好多好多像什么疫情、图书馆现在要起来特别早才有位置、学习疲惫了、想睡觉了，还有一些不可名状的原因...........💥&lt;/p&gt;
+&lt;p&gt;趁着这段学习不高效的状态，到处逛别人的博客👀，看到了好多有意思的文章，也发现了很多有趣的博主，看着他们的博客，想到自己搭建这个博客也一个多月了，突然就想搞一个记录一下搭建博客的这段时间干了些啥 🍂&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;在 11 月头中，想着搭建一个较为轻量的博客，找一个比较好看的博客，然后魔改它，自己也可以借着这个机会好好学一学前端的技术，当初也是觉得只是 3 分钟热度的，可能搞几天，然后就可以因为又对别的技术感兴趣了，就放下这个想法了，但是好像随着日子的逝去，这个念头并没有消失，嘿嘿，其实早也就不是三分钟热度了，表面的伪装罢了。&lt;/p&gt;
+&lt;p&gt;逛了很多热门的主题，像&lt;strong&gt; butterfly&lt;/strong&gt;、&lt;strong&gt;bamboo&lt;/strong&gt;、&lt;strong&gt;volantis&lt;/strong&gt;.... 都很好看，但是总觉得差了点什么，好看但是让我对这些没有什么修改的欲望，&lt;strong&gt;然后&lt;/strong&gt;我就看到了！！！！！&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWUv&#34;&gt; 霜月琉璃的 shoka 主题&lt;/span&gt;  真不错&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;red&#34;&gt;&lt;strong&gt;立马开整&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;开整第一天，哇哇哇哇哇，这个博主大大的配置信息太少了吧，然后开始疯狂踩坑，🌚  在博主的友链中寻找一些已经使用这些主题的其他博主，看看他们有没有写较为详细的博客模板使用声明💦 , 并没有找到几个有，就开始了 F12 之旅💔&lt;/p&gt;
+&lt;p&gt;在删删改改中慢慢的也开始了解了各个组件的文件位置，也在 11 月 26 号左右完成了自己心目中比较完善的配置了，也将这期间学习到的知识也整理成笔记放到博客上去了&lt;span class=&#34;spoiler bulr&#34; title=&#34;你知道得太多了&#34;&gt;都是只会表层的用法&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;这段时间因为学校的提前放假，导致考试周提前到来，加上各种考试考证的，一大堆本来不怎么来图书馆的人，或许因为考试周，或许是其他的，都来来的特别早，诶实在是早起不过他们啊 ⏲️ 这段时间早早 6 点 10 来分起床，一到傍晚，看着窗外的晚霞，就特别犯困 😓 加上喜欢悠闲惬意的纯音乐在耳边环绕，困意 double 😖&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;这段时间也很感谢一位好兄弟，现在他还没有搞博客，已经在催他搞了，也不知道他能不能搞成，也早早起床学习，有人作伴，也是非常不错的一件事情 👍&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;这个博客的真正第一个友链是他 →&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9meHJva3UudG9wLw==&#34;&gt;风曦&lt;/span&gt; 一开始以为是一个特别有礼貌的女孩子，结果发现是一个男孩子 😧&lt;br /&gt;
+不过也不错，起码有人和自己一起探讨一下这个博客的魔改&lt;span class=&#34;spoiler bulr&#34; title=&#34;你知道得太多了&#34;&gt;暂时还没有能力魔改&lt;/span&gt;&lt;br /&gt;
+是在&lt;span class=&#34;red&#34;&gt; 12 月 6 号认识的&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;凡是金子未必都发光， 流浪的人未必都迷茫， 老而弥坚者不会凋零， 深根不会被寒霜触及。&lt;/strong&gt;  在博客上逛街，不记得在谁那里看到这句话了 ✈️&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;在这 30 多天里，前半个月大家好像还不怎么急迫，临近考试，却又变得焦躁不安，我也一样，这几天的作息时间真的很难受，所以我决定还是要保准睡眠，不能因为位置而早早去到，&lt;br /&gt;
+却在那边睡觉 👎 这是很疑惑的点，其他的学校会这样吗 &lt;code&gt;play:下次去别的学校看看&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;在图书馆停下学习观望大家，感觉认真的姿态挺不错的 🔰 想着自己要是能一直保持这种学习姿态，脱离菜鸡的称号也就不远了&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;后话&lt;/code&gt; ：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;居于尘世，我们奔走于红尘之中，来来去去，又有几人为我们所作过短暂的歇足与停留。纵有过萍水相逢的际遇，也注定终是惊鸿一瞥的刹那芳华而已。为了心之所向之事，或为心之所愿而付诸努力，边走边停，寻寻觅觅，一路不断地遗失又得到，得到后不断地失去，忧伤过后是欢欣，欢欣过后又将是惆怅，心灵也总是不断地受伤又复原。
+
+直到走了很长的路之后才发现，我们也曾多么渴望命运的波澜，可到最后才发现世间最美的，竟是内心的淡定与从容。原来这世间之事，绚烂终究归于素净，繁华终究回归平淡，热闹终究归于平静，而热烈的生活过后，便是细水长流的日子
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://iyhi.github.io/2021/12/13/%E5%A4%A7%E6%95%B0%E6%8D%AE/hbase/hbase/</guid>
             <title>HBase-1</title>
