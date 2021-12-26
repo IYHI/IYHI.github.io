@@ -297,6 +297,20 @@
   </url>
   
   <url>
+    <loc>https://iyhi.github.io/tags/python/</loc>
+    <lastmod>2021-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://iyhi.github.io/tags/Django/</loc>
+    <lastmod>2021-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://iyhi.github.io/tags/Java/</loc>
     <lastmod>2021-12-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,27 +339,6 @@
   </url>
   
   <url>
-    <loc>https://iyhi.github.io/tags/HBase/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://iyhi.github.io/tags/python/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://iyhi.github.io/tags/Django/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://iyhi.github.io/tags/%E6%9D%82%E8%AF%B4/</loc>
     <lastmod>2021-12-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -366,6 +359,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://iyhi.github.io/tags/HBase/</loc>
+    <lastmod>2021-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -376,7 +376,21 @@
   </url>
   
   <url>
+    <loc>https://iyhi.github.io/categories/python/</loc>
+    <lastmod>2021-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://iyhi.github.io/categories/Java/</loc>
+    <lastmod>2021-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://iyhi.github.io/categories/python/Django/</loc>
     <lastmod>2021-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -404,20 +418,6 @@
   </url>
   
   <url>
-    <loc>https://iyhi.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://iyhi.github.io/categories/python/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://iyhi.github.io/categories/%E6%9D%82%E8%AF%B4/</loc>
     <lastmod>2021-12-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -425,14 +425,7 @@
   </url>
   
   <url>
-    <loc>https://iyhi.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/HBase/</loc>
-    <lastmod>2021-12-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://iyhi.github.io/categories/python/Django/</loc>
+    <loc>https://iyhi.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2021-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -447,6 +440,13 @@
   
   <url>
     <loc>https://iyhi.github.io/categories/%E6%9D%82%E8%AF%B4/%E6%95%85%E4%BA%8B/</loc>
+    <lastmod>2021-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://iyhi.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/HBase/</loc>
     <lastmod>2021-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
