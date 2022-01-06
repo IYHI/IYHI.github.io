@@ -365,6 +365,13 @@
   </url>
   
   <url>
+    <loc>https://liyhil.com/tags/HBase/</loc>
+    <lastmod>2022-01-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://liyhil.com/tags/Java/</loc>
     <lastmod>2022-01-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -379,13 +386,6 @@
   </url>
   
   <url>
-    <loc>https://liyhil.com/tags/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://liyhil.com/tags/web/</loc>
     <lastmod>2022-01-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -393,7 +393,7 @@
   </url>
   
   <url>
-    <loc>https://liyhil.com/tags/HBase/</loc>
+    <loc>https://liyhil.com/tags/%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -437,6 +437,13 @@
   </url>
   
   <url>
+    <loc>https://liyhil.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2022-01-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://liyhil.com/categories/Java/</loc>
     <lastmod>2022-01-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -451,14 +458,7 @@
   </url>
   
   <url>
-    <loc>https://liyhil.com/categories/Java/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liyhil.com/categories/Java/Spring/</loc>
+    <loc>https://liyhil.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/HBase/</loc>
     <lastmod>2022-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -472,7 +472,14 @@
   </url>
   
   <url>
-    <loc>https://liyhil.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <loc>https://liyhil.com/categories/Java/Spring/</loc>
+    <lastmod>2022-01-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://liyhil.com/categories/Java/%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -480,13 +487,6 @@
   
   <url>
     <loc>https://liyhil.com/categories/%E6%9D%82%E8%AF%B4/</loc>
-    <lastmod>2022-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liyhil.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/HBase/</loc>
     <lastmod>2022-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
