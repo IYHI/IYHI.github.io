@@ -8,10 +8,27 @@
     <author>
       <name>YH</name>
     </author>
-    <updated>2022-01-20T03:02:06.000Z</updated>
+    <updated>2022-01-25T16:00:00.000Z</updated>
     <category term="java" />
     <category term="python" />
     <category term="算法" />
+    <entry>
+        <id>https://liyhil.com/2022/01/26/%E6%9D%82%E8%AF%B4/%E9%9A%8F%E5%BF%83%E5%86%99/2021%E7%9A%84%E5%B0%8F%E5%B9%B4/</id>
+        <title>小年</title>
+        <link rel="alternate" href="https://liyhil.com/2022/01/26/%E6%9D%82%E8%AF%B4/%E9%9A%8F%E5%BF%83%E5%86%99/2021%E7%9A%84%E5%B0%8F%E5%B9%B4/"/>
+        <content type="html">&lt;div style=&#34;float:right;&#34;&gt;&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006FEGRGgy1gyqwn77h12g3068064aad.gif&#34; alt=&#34;&#34; style=&#34;width: 110px !important;&#34;&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;腊月廿四&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#腊月廿四&#34;&gt;#&lt;/a&gt; 腊月廿四&lt;/h1&gt;
+&lt;p&gt;今天是农历的小年了～&lt;/p&gt;
+&lt;p&gt;这个博客也建立了 70 来天了，一切都在向着美好的方向发展&lt;/p&gt;
+&lt;hr /&gt;
+</content>
+        <category term="杂说" scheme="https://liyhil.com/categories/%E6%9D%82%E8%AF%B4/" />
+        <category term="随缘记录" scheme="https://liyhil.com/categories/%E6%9D%82%E8%AF%B4/%E9%9A%8F%E7%BC%98%E8%AE%B0%E5%BD%95/" />
+        <category term="杂说" scheme="https://liyhil.com/tags/%E6%9D%82%E8%AF%B4/" />
+        <category term="随缘记录" scheme="https://liyhil.com/tags/%E9%9A%8F%E7%BC%98%E8%AE%B0%E5%BD%95/" />
+        <updated>2022-01-25T16:00:00.000Z</updated>
+    </entry>
     <entry>
         <id>https://liyhil.com/2022/01/20/%E8%87%AA%E5%B7%B1%E5%88%B6%E4%BD%9C%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%AF%B4%E6%98%8E/</id>
         <title>自己制作的博客说明</title>
@@ -1083,7 +1100,7 @@ final 修饰符通常和 static 修饰符一起使用来创建类常量。&lt;/p
 &lt;li&gt;&lt;strong&gt;抽象类不能被实例化&lt;/strong&gt; (初学者很容易犯的错)，如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;抽象类和抽象方法都需要被 &lt;span class=&#34;red&#34;&gt;abstract&lt;/span&gt; 修饰&lt;/strong&gt;，抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。&lt;/li&gt;
 &lt;li&gt;抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。&lt;/li&gt;
-&lt;li&gt;** 构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。** 下列关键字也不能和 abstract 共存
+&lt;li&gt;&lt;strong&gt;构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法&lt;/strong&gt;。下列关键字也不能和 abstract 共存
 &lt;ul&gt;
 &lt;li&gt;private：私有的方法子类是无法继承到的，也不存在覆盖，如果 abstract 和 private 一起使用修饰方法， abstract 既要子类去实现这个方法，而 private 修饰子类根本无法得到父类这个方法，互相矛盾&lt;/li&gt;
 &lt;li&gt;final：final 修饰的类不能被继承，而抽象类一定是父类&lt;/li&gt;
@@ -2609,101 +2626,5 @@ stu.put &#39;2018111701&#39;, &#39;basic_info:birthday&#39;,&#39;2018-10-01&#39;
         <category term="Java" scheme="https://liyhil.com/tags/Java/" />
         <category term="web" scheme="https://liyhil.com/tags/web/" />
         <updated>2021-12-07T10:16:50.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://liyhil.com/2021/12/07/java/web/Java%20web-2/</id>
-        <title>Java Web程序设计（郭克华）- 2</title>
-        <link rel="alternate" href="https://liyhil.com/2021/12/07/java/web/Java%20web-2/"/>
-        <content type="html">&lt;h2 id=&#34;表单&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#表单&#34;&gt;#&lt;/a&gt; 表单&lt;/h2&gt;
-&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;from&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;action&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;指定要传到的地方&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;提交表单的方式&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;类型&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;用来获得这个值的id&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;默认值&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;from&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;提交表单的方式（常见）：&lt;strong&gt;get、post&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;JSP 获得表单的内容&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; %
-   // 获取表单中name=&amp;quot;id&amp;quot;的单元格输入内容给str 
-   String str = request.getParament(&amp;quot;id&amp;quot;);
-   % &amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;获取&lt;strong&gt;复选框或者多选列表&lt;/strong&gt;中的值&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-jsp&#34;&gt;&amp;lt; %
-   String[] str = request.getParamentValues(&amp;quot;id&amp;quot;);
-   % &amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;jsp内置对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp内置对象&#34;&gt;#&lt;/a&gt; JSP 内置对象&lt;/h2&gt;
-&lt;p&gt;JSP 规范中定义了 9 中内置对象：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;out 对象&lt;/strong&gt;：负责管理对客户端的输出&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;request 对象&lt;/strong&gt;：负责得到客户端的请求信息&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;response 对象&lt;/strong&gt;：负责向客户端发送请求&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;session 对象&lt;/strong&gt;：负责保存&lt;strong&gt;同一客户端一次会话过程&lt;/strong&gt;中的一些信息&lt;/li&gt;
-&lt;li&gt;application 对象：表示整个应用的环境信息&lt;/li&gt;
-&lt;li&gt;exception 对象：表示通过页面上发生异常，可以通过他获得页面的异常信息&lt;/li&gt;
-&lt;li&gt;page 对象：表示当前 JSP 页面本身，类似于 Java 中的 this&lt;/li&gt;
-&lt;li&gt;pageContext 对象：表示此 JSP 上下文&lt;/li&gt;
-&lt;li&gt;config 对象：表示此 JSP 的 ServletConfig&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;out对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#out对象&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;out 对象&lt;/span&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;print () 和 println ()，前一个不换行，后一个输出完括号里面的内容后，下一次输出会换行，&lt;strong&gt;但是&lt;/strong&gt;在网页上并不会换行，网页上换行还得 &amp;lt;br&amp;gt;&lt;/li&gt;
-&lt;li&gt;close ()：关闭输出流，强制终止当前页面的&lt;strong&gt;剩余部分&lt;/strong&gt;向浏览器输出&lt;/li&gt;
-&lt;li&gt;clearBuffer ()：清除缓冲区里的数据，&lt;strong&gt;并且把数据写到客户端去&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;clear ()：清除缓冲区里的数据，并且&lt;span class=&#34;red&#34;&gt;&lt;strong&gt;不&lt;/strong&gt;&lt;/span&gt;把数据写到客户端去&lt;/li&gt;
-&lt;li&gt;getRemaining ()：获取缓冲区&lt;strong&gt;没有被占用&lt;/strong&gt;的大小&lt;/li&gt;
-&lt;li&gt;flush ()：输出缓冲区的数据（在把数据输出给客户端之后，会把缓冲区的数据删除）&lt;/li&gt;
-&lt;li&gt;getBufferSize ()：获得缓冲区的大小&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;request对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#request对象&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;request 对象&lt;/span&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;getMethod ()：得到请求方式&lt;/li&gt;
-&lt;li&gt;getRequestURL ()：得到请求的 URL 地址&lt;/li&gt;
-&lt;li&gt;getProtocol ()：得到协议名称&lt;/li&gt;
-&lt;li&gt;getServletPath ()：得到客户端请求服务器文件路径&lt;/li&gt;
-&lt;li&gt;getQueryString ()：得到 URL 的查询部分，对于 post 提交，不会得到任何东西&lt;/li&gt;
-&lt;li&gt;getServerName ()：得到服务器的名称&lt;/li&gt;
-&lt;li&gt;getServerPort ()：得到服务器的端口&lt;/li&gt;
-&lt;li&gt;getRomteAddr ()：得到客户端的 IP&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;response对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#response对象&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;red&#34;&gt;response 对象&lt;/span&gt;&lt;/h3&gt;
-&lt;p&gt;可以&lt;strong&gt;利用 response 对象&lt;/strong&gt;进行&lt;strong&gt;重定向&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;response.sendRedirect(目标页面路径)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;重定向的方法主要有两种：&lt;strong&gt;response.sendRedirect&lt;/strong&gt; 和&lt;strong&gt; forward&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;区别：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;从浏览器地址显示来看&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;forword&lt;/strong&gt; 方法属于&lt;strong&gt;服务器请求资源&lt;/strong&gt;，服务器&lt;strong&gt;直接访问目标地址&lt;/strong&gt;，对该目标地址的响应内容进行读取，再把读取的内容发送给客户端浏览器，因此浏览器的地址不变&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Redirect&lt;/strong&gt; 方法是告诉客户端，使得浏览器知道去请求哪一个地址，相当于客户端重新请求，所以浏览器地址会显示&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;从数据共享来看&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;forword&lt;/strong&gt; 方法使得跳转的页面可以共享之前页面 request 里面的数据&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Redirect&lt;/strong&gt; 方法不能共享&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;从功能上来看&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;forword&lt;/strong&gt; 方法只能在&lt;strong&gt;同一个 Web 应用程序内&lt;/strong&gt;的资源之间的转发请求，服务器的内部操作，不可定位到其他应用程序上&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Redirect&lt;/strong&gt; 方法能够重定向到当前应用程序的其他资源、能够重定向到同一个站点上的其他应用程序中的资源、能通过绝对地址重定向到其他站点的资源&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;从效率上看&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;forward&lt;/strong&gt; 效率更高，因为它仅仅只在本服务器上跳转&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Redirect&lt;/strong&gt; 方法的效率相对较低，因为相当于客户端又发送了一次请求&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;cookie操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cookie操作&#34;&gt;#&lt;/a&gt; Cookie 操作&lt;/h2&gt;
-&lt;details class=&#34;danger&#34;&gt;&lt;summary&gt;Cookie说明&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;cookie 是一个小的&lt;strong&gt;文本数据&lt;/strong&gt;，由&lt;strong&gt;服务器端&lt;/strong&gt;产生，发送给客户端浏览器，如果客户端浏览器设置为启用 Cookie，则会将这个小的文本数据保存到某个目录下的文本文件内，下次登录同一个网站，客户端浏览器会自动将 cookie 读入之后传给服务器端。在一般情况下，Cookie 中的值是以 key-value 的形式进行表达的&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;p&gt;在写 cookie 时主要用到以下的方法：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;response.addCookie (Cookie C)：通过该方法将 Cookie 写入客户端&lt;/li&gt;
-&lt;li&gt;Cookie.&lt;strong&gt;setMacAge&lt;/strong&gt; (int second)：通过该方法设置 Cookie 的存活时间，参数为秒&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="Java" scheme="https://liyhil.com/categories/Java/" />
-        <category term="web" scheme="https://liyhil.com/categories/Java/web/" />
-        <category term="Java" scheme="https://liyhil.com/tags/Java/" />
-        <category term="web" scheme="https://liyhil.com/tags/web/" />
-        <updated>2021-12-07T09:10:23.000Z</updated>
     </entry>
 </feed>
