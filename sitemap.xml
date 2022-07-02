@@ -500,14 +500,7 @@
   </url>
   
   <url>
-    <loc>https://liyhil.com/tags/%E9%9A%8F%E7%BC%98%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liyhil.com/tags/%E6%95%85%E4%BA%8B/</loc>
+    <loc>https://liyhil.com/tags/HBase/</loc>
     <lastmod>2022-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -528,7 +521,28 @@
   </url>
   
   <url>
+    <loc>https://liyhil.com/tags/%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2022-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://liyhil.com/tags/%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2022-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://liyhil.com/tags/web/</loc>
+    <lastmod>2022-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://liyhil.com/tags/%E6%95%85%E4%BA%8B/</loc>
     <lastmod>2022-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -549,21 +563,7 @@
   </url>
   
   <url>
-    <loc>https://liyhil.com/tags/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liyhil.com/tags/%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liyhil.com/tags/HBase/</loc>
+    <loc>https://liyhil.com/tags/%E9%9A%8F%E7%BC%98%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2022-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -600,14 +600,7 @@
   </url>
   
   <url>
-    <loc>https://liyhil.com/categories/%E7%94%9F%E6%B4%BB%E7%A2%8E%E4%BA%8B/%E6%9D%82%E8%AF%B4/%E9%9A%8F%E7%BC%98%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liyhil.com/categories/%E7%94%9F%E6%B4%BB%E7%A2%8E%E4%BA%8B/%E6%9D%82%E8%AF%B4/%E6%95%85%E4%BA%8B/</loc>
+    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2022-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -621,14 +614,14 @@
   </url>
   
   <url>
-    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/python/</loc>
+    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/%E5%A4%A7%E6%95%B0%E6%8D%AE/HBase/</loc>
     <lastmod>2022-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <loc>https://liyhil.com/categories/%E7%94%9F%E6%B4%BB%E7%A2%8E%E4%BA%8B/%E6%9D%82%E8%AF%B4/%E6%95%85%E4%BA%8B/</loc>
     <lastmod>2022-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -636,6 +629,34 @@
   
   <url>
     <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/Java/Spring/</loc>
+    <lastmod>2022-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/python/</loc>
+    <lastmod>2022-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://liyhil.com/categories/%E7%94%9F%E6%B4%BB%E7%A2%8E%E4%BA%8B/%E6%9D%82%E8%AF%B4/%E9%9A%8F%E7%BC%98%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2022-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/Java/%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2022-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/Java/%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -650,27 +671,6 @@
   
   <url>
     <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/python/Django/</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/Java/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/Java/%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liyhil.com/categories/%E7%9F%A5%E8%AF%86%E6%B5%B7%E6%B4%8B/%E5%A4%A7%E6%95%B0%E6%8D%AE/HBase/</loc>
     <lastmod>2022-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
